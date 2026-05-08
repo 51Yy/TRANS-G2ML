@@ -1,0 +1,59 @@
+add_vocab_flag: True                             # whether to add supplementary vocab
+LLRD_flag: False                                    # whether to use layer-wise lr decay
+aug_flag: False                                     # whether to apply data augmentation
+aug_special_flag: True                            # whether to augment copolymer SMILES
+model_indicator: 'pretrain'                        # whether to use pretrained model
+aug_indicator: 5                                    # number of augmentation per SMILES. If no limitation, assign the indicator with None (leave it blank).
+use_val_set: True                                 # whether to use a validation set for nested cross-validation.
+
+### Expression vs Immunogenicity
+vocab_sup_file: 'data/vocab/Expression_IH_P_vocab.csv'           # supplementary vocab file path
+task1_train_file: 'data/Expression_IH_P.csv'    # task 1 train file path
+task2_train_file: 'data/Imm_IH_P.csv'    # task 2 train file path
+model_path: 'ckpt/pretrain.pt'                      # pretrain model path
+save_path: 'ckpt/IH_P_MTL_train_uw.pt'                     # checkpoint path
+best_model_path: 'ckpt/IH_P_MTL_best_model_uw.pt'          # best model save path
+result_file: 'results/IH_P_MTL_results_uw.csv'             # result file path, including train and test metrics
+
+scaler_task1_path: 'results/IH_P_MTL_task1_scaler_uw.pkl'    # scaler path for task 1
+scaler_task2_path: 'results/IH_P_MTL_task2_scaler_uw.pkl'    # scaler path for task 2
+
+# ### Cell vs mRNA
+# vocab_sup_file: 'data/vocab/Expression_IH_CM_P_vocab.csv'           # supplementary vocab file path
+# task1_train_file: 'data/Expression_IH_P_MTL_cell.csv'    # task 1 train file path
+# task2_train_file: 'data/Expression_IH_P_MTL_cell.csv'    # task 2 train file path
+# model_path: 'ckpt/pretrain.pt'                      # pretrain model path
+# save_path: 'ckpt/Expression_IH_P_MTL_cell_train_uw.pt'                     # checkpoint path
+# best_model_path: 'ckpt/Expression_IH_P_MTL_cell_best_model_uw.pt'          # best model save path
+# result_file: 'results/Expression_IH_P_MTL_cell_results_uw.csv'             # result file path, including train and test metrics
+
+# scaler_task1_path: 'results/MTL_IH_P_cell_task1_scaler_uw.pkl'    # scaler path for task 1
+# scaler_task2_path: 'results/MTL_IH_P_cell_task2_scaler_uw.pkl'    # scaler path for task 2
+
+# ### External
+# vocab_sup_file: 'data/vocab/Expression_ET_vocab.csv'           # supplementary vocab file path
+# task1_train_file: 'data/Expression_ET.csv'    # task 1 train file path
+# task2_train_file: 'data/Expression_ET.csv'    # task 2 train file path
+# model_path: 'ckpt/pretrain.pt'                      # pretrain model path
+# save_path: 'ckpt/Expression_ET_MTL_train_uw.pt'                     # checkpoint path
+# best_model_path: 'ckpt/Expression_ET_MTL_best_model_uw.pt'          # best model save path
+# result_file: 'results/Expression_ET_MTL_results_uw.csv'             # result file path, including train and test metrics
+
+# scaler_task1_path: 'results/MTL_ET_task1_scaler_uw.pkl'    # scaler path for task 1
+# scaler_task2_path: 'results/MTL_ET_task2_scaler_uw.pkl'    # scaler path for task 2
+
+k: 5                                                # k-fold cross-validation
+blocksize: 411                                      # max length of sequences after tokenization
+batch_size: 16                                      # batch size
+num_epochs: 50                                      # total number of epochs
+warmup_ratio: 0.05                                  # warmup ratio
+drop_rate: 0.1                                      # dropout
+lr_rate: 0.00005                                    # initial lr for LLRD and pretrained model lr otherwise
+lr_rate_reg: 0.0001                                 # regressor lr if LLRD is not used
+weight_decay: 0.01
+hidden_dropout_prob: 0.1                            # hidden layer dropout
+attention_probs_dropout_prob: 0.1                   # attention dropout
+tolerance: 5                                        # tolerance of no improvement in performance before early stop
+num_workers: 8                                      # number of workers when loading data
+
+
