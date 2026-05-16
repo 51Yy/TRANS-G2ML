@@ -1,7 +1,4 @@
-# TRANS-G2ML
-
-## Overview
-**Machine Learning-Guided Design of Low Immunogenic Polymers to Enhance T Cell Responses in mRNA Cancer Vaccination**
+## Machine Learning-Guided Design of Low Immunogenic Polymers to Enhance T Cell Responses in mRNA Cancer Vaccination
 
 <img width="451" height="547" alt="image" src="https://github.com/user-attachments/assets/43761530-8d23-4b35-b1f4-6dc793665e71" />
 
