@@ -65,17 +65,8 @@ scripts/TRANS-G2/data/
 
 ## Acknowledgements
 
-The TRANS-G2ML model in this repository is customized based on the TransPolymer model.
-
-Original paper:
-
-> Xu, C. et al. *A transferable, data-efficient and scalable deep learning framework for predicting polymer properties.*  
-> **npj Computational Materials** 9, 64, 2023.  
-> https://www.nature.com/articles/s41524-023-01016-5
-
-Original repository:
-
-> https://github.com/ChangwenXu98/TransPolymer
+The TRANS-G2ML model in this repository is customized based on the TransPolymer model. 
+https://github.com/ChangwenXu98/TransPolymer
 
 ## Citation
 
