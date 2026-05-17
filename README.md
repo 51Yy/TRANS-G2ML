@@ -15,7 +15,7 @@ The platform is designed to identify and optimize polymer carriers that promote 
 
 ## Model Description
 
-### DESC-G1MLå
+### DESC-G1ML
 
 A descriptor-based machine learning model trained on high-throughput experimental data to predict polymer delivery performance.
 
